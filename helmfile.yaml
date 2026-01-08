@@ -1,7 +1,7 @@
 environments:
   minikube:
-    # values:
-    #   - minikube.yaml
+    values:
+      - minikube.yaml
 ---
 repositories:
   - name: prometheus-community
@@ -9,6 +9,10 @@ repositories:
 
 ---
 releases:
+  - name: prometheus-operator-crds
+    namespace: monitoring
+    chart: prometheus-community/prometheus-operator-crds
+    version: 25.0.1
   - name: kube-prometheus-stack
     namespace: monitoring
     chart: prometheus-community/kube-prometheus-stack
